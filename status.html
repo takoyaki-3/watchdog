@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Status</title>
+</head>
+<body>
+    <h1>Host Status</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Last Access Time</th>
+        </tr>
+        {{range $key, $value := .}}
+        <tr>
+            <td>{{$key}}</td>
+            <td>{{$value}}</td>
+        </tr>
+        {{end}}
+    </table>
+</body>
+</html>
