@@ -2,20 +2,31 @@
 <html>
 <head>
     <title>Status</title>
+    <!-- Materialize CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <body>
-    <h1>Host Status</h1>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Last Access Time</th>
-        </tr>
-        {{range $key, $value := .}}
-        <tr>
-            <td>{{$key}}</td>
-            <td>{{$value}}</td>
-        </tr>
-        {{end}}
-    </table>
+    <div class="container">
+        <h1 class="center-align">Host Status</h1>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Last Access Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range $key, $value := .}}
+                <tr>
+                    <td>{{$key}}</td>
+                    <td>{{$value}}</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Materialize JavaScript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
