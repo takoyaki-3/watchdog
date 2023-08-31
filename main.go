@@ -76,6 +76,10 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	ipAddress := r.RemoteAddr
 	id := r.URL.Query().Get("id")
 
+	if id == ""{
+		return
+	}
+
 	mutex.Lock()
 	accessTimes[id] = time.Now()
 	emailSentFlags[id] = false
